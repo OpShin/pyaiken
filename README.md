@@ -49,3 +49,19 @@ print(addr_mainnet)
 # prints "addr1wx3x3tt88a9c44fxvv03w879v5ye98hzayq0yv4x7jhr0lc7pge2l"
 print(addr_testnet)
 # prints "addr_test1wz3x3tt88a9c44fxvv03w879v5ye98hzayq0yv4x7jhr0lc9fu996"
+```
+
+### Building
+
+In case you need to build this package from source, install Python3 and Rust and proceed as follows.
+
+```bash
+git clone https://github.com/ImperatorLang/pyaiken
+cd pyaiken
+python3 -m venv .env
+source .env/bin/activate  # or in whichever environment you want to have it installed
+pip install manturin
+manturin build
+```
+
+The package will be installed in the active python environment.
