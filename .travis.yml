@@ -1,0 +1,17 @@
+language: python
+python:
+- '3.8'
+dist: bionic
+os: linux
+arch:
+  - arm64
+jobs:
+  fast_finish: true
+
+deploy:
+  provider: script
+  script: ".ci/deploy_to_pypi.sh"
+  on:
+    python: "3.10"
+    tags: true
+    repo: ImperatorLang/pyaiken
