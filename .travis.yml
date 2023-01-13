@@ -18,6 +18,6 @@ deploy:
   provider: script
   script: ".ci/deploy_to_pypi.sh"
   on:
+    branch: autodeploy
     python: "3.10"
-    tags: true
     repo: ImperatorLang/pyaiken
