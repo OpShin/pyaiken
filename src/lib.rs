@@ -5,8 +5,6 @@ use uplc::{
     parser, machine::cost_model::ExBudget,
 };
 use std::fmt;
-use pallas::ledger::{addresses::Address, primitives::babbage};
-use pallas_traverse::ComputeHash;
 
 // UPLC submodule
 
@@ -113,72 +111,6 @@ pub fn eval(
     return Ok(_uplc_eval(code, args.try_into()?, (cpubudget, membudget))?);
 }
 
-// Address submodule
-
-pub fn _mainnet_bytes() -> Vec<u8> {
-   return vec![0b01110001];
-}
-
-#[pyfunction]
-pub fn mainnet_bytes() -> PyResult<Vec<u8>> {
-    return Ok(_mainnet_bytes());
-}
-
-pub fn _testnet_bytes() -> Vec<u8> {
-    return vec![0b01110000];
-}
-
-#[pyfunction]
-pub fn testnet_bytes() -> PyResult<Vec<u8>> {
-    return Ok(_testnet_bytes());
-}
-
-pub fn _script_address_build(
-    cbor_hex: String,
-    _network_bytes: Vec<u8>,
-) -> Result<String, AikenError> {
-    let cbor = hex::decode(cbor_hex).into_diagnostic()?;
-
-    // Create mainnet and testnet addresses
-    let plutus_script = babbage::PlutusV2Script(cbor.into());
-
-    let hash = plutus_script.compute_hash();
-
-    // mainnet
-    let mut network_bytes: Vec<u8> = _network_bytes;
-    network_bytes.extend(hash.iter());
-
-    let addr = Address::from_bytes(&network_bytes)
-        .unwrap()
-        .to_bech32()
-        .unwrap();
-
-    return Ok(addr);
-}
-
-
-#[pyfunction]
-pub fn build(
-    cbor_hex: String,
-    network_bytes: Vec<u8>,
-) -> PyResult<String> {
-    return Ok(_script_address_build(cbor_hex, network_bytes)?);
-}
-
-#[pyfunction]
-pub fn build_mainnet(
-    cbor_hex: String,
-) -> PyResult<String> {
-    return Ok(_script_address_build(cbor_hex, _mainnet_bytes())?);
-}
-
-#[pyfunction]
-pub fn build_testnet(
-    cbor_hex: String,
-) -> PyResult<String> {
-    return Ok(_script_address_build(cbor_hex, _testnet_bytes())?);
-}
-
 // Module registration
 
 fn register_module_uplc(py: Python<'_>, parent_module: &PyModule) -> PyResult<()> {
@@ -190,21 +122,9 @@ fn register_module_uplc(py: Python<'_>, parent_module: &PyModule) -> PyResult<()
 }
 
 
-fn register_module_address(py: Python<'_>, parent_module: &PyModule) -> PyResult<()> {
-    let m = PyModule::new(py, "script_address")?;
-    m.add_function(wrap_pyfunction!(build, m)?)?;
-    m.add_function(wrap_pyfunction!(build_mainnet, m)?)?;
-    m.add_function(wrap_pyfunction!(build_testnet, m)?)?;
-    m.add_function(wrap_pyfunction!(mainnet_bytes, m)?)?;
-    m.add_function(wrap_pyfunction!(testnet_bytes, m)?)?;
-    parent_module.add_submodule(m)?;
-    Ok(())
-}
-
 /// A Python module implemented in Rust.
 #[pymodule]
 fn pyaiken(_py: Python, m: &PyModule) -> PyResult<()> {
     register_module_uplc(_py, m)?;
-    register_module_address(_py, m)?;
     Ok(())
 }

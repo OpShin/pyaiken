@@ -39,16 +39,6 @@ print(code)
 print((suc, err), logs, (cpu, mem))
 # prints "('(con data #01)', None), [], (9907900, 13999500)"
 
-
-### script_address.build_mainnet | script_address.build_test
-# Compute the bech32 representations of a PlutusV2 script, based on the CBOR hex of the flat encoded script.
-addr_mainnet = script_address.build_mainnet(code)
-addr_testnet = script_address.build_testnet(code)
-
-print(addr_mainnet)
-# prints "addr1wx3x3tt88a9c44fxvv03w879v5ye98hzayq0yv4x7jhr0lc7pge2l"
-print(addr_testnet)
-# prints "addr_test1wz3x3tt88a9c44fxvv03w879v5ye98hzayq0yv4x7jhr0lc9fu996"
 ```
 
 ### Building
