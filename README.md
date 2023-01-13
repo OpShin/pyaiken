@@ -1,5 +1,7 @@
 pyaiken
 =======
+[![PyPI version](https://badge.fury.io/py/pyaiken.svg)](https://pypi.org/project/pyaiken/)
+[![PyPI - Status](https://img.shields.io/pypi/status/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 
 This package supplies python bindings for the package [aiken](https://github.com/aiken-lang/aiken).
 The bindings are added on a per-need basis, currently only serving the development of [eopsin](https://github.com/ImperatorLang/eopsin)
