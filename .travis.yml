@@ -1,16 +1,6 @@
 language: python
 python:
-- '3.8'
-dist: bionic
-os: linux
-arch:
-  - arm64
-jobs:
-  fast_finish: true
-
-language: python
-python:
-- '3.8'
+- '3.10'
 dist: bionic
 os: linux
 arch:
@@ -19,8 +9,10 @@ jobs:
   fast_finish: true
 
 install:
+ - echo "skipped"
 
 script:
+ - echo "skipped"
 
 deploy:
   provider: script
