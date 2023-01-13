@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Use https://hub.docker.com/r/robertodr/maturin to deploy
-
 docker run \
        --env MATURIN_PASSWORD="$MATURIN_PASSWORD" \
        --rm \

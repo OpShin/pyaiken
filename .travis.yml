@@ -16,7 +16,7 @@ script:
 
 deploy:
   provider: script
-  script: ".ci/deploy_to_pypi.sh"
+  script: bash .ci/deploy_to_pypi.sh
   on:
     branch: autodeploy
     python: "3.10"
