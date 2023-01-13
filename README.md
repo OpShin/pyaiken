@@ -1,5 +1,7 @@
 pyaiken
 =======
+[![PyPI version](https://badge.fury.io/py/pyaiken.svg)](https://pypi.org/project/pyaiken/)
+[![PyPI - Status](https://img.shields.io/pypi/status/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 
 This package supplies python bindings for the package [aiken](https://github.com/aiken-lang/aiken).
 The bindings are added on a per-need basis, currently only serving the development of [eopsin](https://github.com/ImperatorLang/eopsin)
@@ -50,8 +52,8 @@ git clone https://github.com/ImperatorLang/pyaiken
 cd pyaiken
 python3 -m venv .env
 source .env/bin/activate  # or in whichever environment you want to have it installed
-pip install manturin
-manturin build
+pip install maturin
+maturin build
 ```
 
 The package will be installed in the active python environment.
