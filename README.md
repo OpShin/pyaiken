@@ -1,5 +1,6 @@
 pyaiken
 =======
+[![Build Status](https://app.travis-ci.com/ImperatorLang/pyaiken.svg?branch=master)](https://app.travis-ci.com/ImperatorLang/pyaiken)
 [![PyPI version](https://badge.fury.io/py/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 [![PyPI - Status](https://img.shields.io/pypi/status/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 
