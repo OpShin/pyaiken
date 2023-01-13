@@ -9,10 +9,10 @@ jobs:
   fast_finish: true
 
 install:
- - echo "skipped"
+ - pip install maturin
 
 script:
- - echo "skipped"
+ - maturin build
 
 deploy:
   provider: script
