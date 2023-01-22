@@ -21,7 +21,7 @@ python3 -m pip install pyaiken
 
 ```python
 
-from pyaiken import uplc, script_address
+from pyaiken import uplc
 
 # Tools for handling UPLC
 
@@ -31,6 +31,13 @@ code = uplc.flat("(program 1.0.0 (con data #01))")
 
 print(code)
 # prints "490100004c0101010001"
+
+### uplc.unflat
+# Print the UPLC in textual notation from the hex of the CBOR encoded flat-encoding
+code = uplc.unflat("490100004c0101010001")
+
+print(code)
+# prints "(program 1.0.0 (con data #01))"
 
 ### uplc.eval
 # Evaluate a UPLC program with the given arguments (all in textual representation) and cpu and memory budget (optional, in this order)
