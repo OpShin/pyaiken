@@ -8,12 +8,6 @@ os: linux
 arch: arm64
 jobs:
   fast_finish: true
-  include:
-      - if: branch = master
-        python: '3.10'
-        dist: bionic
-        os: linux
-        arch: amd64
 
 install:
  - pip install maturin
