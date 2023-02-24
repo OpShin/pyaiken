@@ -1,0 +1,33 @@
+language: rust
+rust:
+ - stable
+dist: bionic
+os: linux
+arch: arm64
+jobs:
+  fast_finish: true
+
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.10
+before_install:
+  - sudo apt-get update
+  - sudo apt purge python2.7-minimal
+  - sudo apt-get install python3 python3-pip python3-setuptools
+  - pip3 install --upgrade pip
+
+install:
+ - pip3 install maturin
+
+script:
+ - maturin build
+
+deploy:
+  provider: script
+  script: bash .ci/deploy_to_pypi.sh
+  on:
+    branch: master
+    repo: ImperatorLang/pyaiken
