@@ -1,4 +1,6 @@
-language: python
+language:
+ - python
+ - rust
 python:
 - '3.8'
 - '3.9'
@@ -10,6 +12,8 @@ jobs:
   fast_finish: true
 
 install:
+ # install latest version of rust
+ - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
  - pip install maturin
 
 script:
