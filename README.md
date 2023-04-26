@@ -1,11 +1,11 @@
 pyaiken
 =======
-[![CI](https://github.com/ImperatorLang/pyaiken/actions/workflows/CI.yml/badge.svg)](https://github.com/ImperatorLang/pyaiken/actions/workflows/CI.yml)
+[![CI](https://github.com/OpShin/pyaiken/actions/workflows/CI.yml/badge.svg)](https://github.com/OpShin/pyaiken/actions/workflows/CI.yml)
 [![PyPI version](https://badge.fury.io/py/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 [![PyPI - Status](https://img.shields.io/pypi/status/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 
 This package supplies python bindings for the package [aiken](https://github.com/aiken-lang/aiken).
-The bindings are added on a per-need basis, currently only serving the development of [eopsin](https://github.com/ImperatorLang/eopsin)
+The bindings are added on a per-need basis, currently only serving the development of [opshin](https://github.com/opshin)
 
 
 ### Installation
@@ -56,7 +56,7 @@ print((suc, err), logs, (cpu, mem))
 In case you need to build this package from source, install Python3 and Rust and proceed as follows.
 
 ```bash
-git clone https://github.com/ImperatorLang/pyaiken
+git clone https://github.com/OpShin/pyaiken
 cd pyaiken
 python3 -m venv .env
 source .env/bin/activate  # or in whichever environment you want to have it installed
