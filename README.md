@@ -47,7 +47,7 @@ print(code)
 ((suc, err), logs, (cpu, mem)) = uplc.eval("(program 1.0.0 (lam x x))", ["(con data #01)"], 1000000, None)
 
 print((suc, err), logs, (cpu, mem))
-# prints "('(con data #01)', None), [], (9907900, 13999500)"
+# prints "('(con data #01)', None), [], (92100, 500)"
 
 ```
 
