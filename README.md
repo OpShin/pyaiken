@@ -43,7 +43,7 @@ print(code)
 # Evaluate a UPLC program with the given arguments (all in textual representation) and cpu and memory budget (optional, in this order)
 # Returns either computed UPLC value on success or thrown error on failure,
 # logs generated through trace
-# and the remaining cpu and memory steps
+# and the consumed cpu and memory steps
 ((suc, err), logs, (cpu, mem)) = uplc.eval("(program 1.0.0 (lam x x))", ["(con data #01)"], 1000000, None)
 
 print((suc, err), logs, (cpu, mem))
