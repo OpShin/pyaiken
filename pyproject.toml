@@ -8,12 +8,12 @@ requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 description = "Python bindings for aiken"
 keywords=["python", "rust", "cardano", "smart contract", "blockchain"]
@@ -26,6 +26,6 @@ authors = [
 maintainers = [
   {name = "Niels Mündler", email = "n.muendler@posteo.de"}
 ]
-url = "https://github.com/imperatorlang/uplc"
+url = "https://github.com/opshin/uplc"
 
 
