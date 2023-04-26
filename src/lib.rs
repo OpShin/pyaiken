@@ -108,7 +108,10 @@ pub fn _uplc_eval(
 
     let budget = ExBudget { mem: mem, cpu: cpu };
 
-    let (term, cost, logs) = program.eval(budget);
+    let mut res = program.eval(budget);
+    let cost = res.cost();
+    let logs = res.logs();
+    let term = res.result();
 
     return Ok((
         match term {
