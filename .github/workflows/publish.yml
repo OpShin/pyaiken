@@ -1,11 +1,9 @@
-name: release
+name: publish
 
 on:
   push:
-    branches:
-      - main
-      - master
-  workflow_dispatch:
+    tags:
+      - "*.*.*"
 
 jobs:
   release:
@@ -23,3 +21,10 @@ jobs:
         with:
           command: upload
           args: --skip-existing *
+      # If there isn't a release for this version, create a new one.
+      - uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
+          makeLatest: true
+          prerelease: true
+          skipIfReleaseExists: true
