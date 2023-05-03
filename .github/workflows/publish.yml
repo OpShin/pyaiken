@@ -26,5 +26,4 @@ jobs:
         with:
           generateReleaseNotes: true
           makeLatest: true
-          prerelease: true
           skipIfReleaseExists: true
