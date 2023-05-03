@@ -29,5 +29,5 @@ deploy:
   provider: script
   script: bash .ci/deploy_to_pypi.sh
   on:
-    branch: master
-    repo: ImperatorLang/pyaiken
+    tags: true
+    repo: OpShin/pyaiken
