@@ -1,6 +1,7 @@
 pyaiken
 =======
 [![CI](https://github.com/OpShin/pyaiken/actions/workflows/CI.yml/badge.svg)](https://github.com/OpShin/pyaiken/actions/workflows/CI.yml)
+[![Build Status](https://app.travis-ci.com/OpShin/pyaiken.svg?branch=master)](https://app.travis-ci.com/OpShin/pyaiken)
 [![PyPI version](https://badge.fury.io/py/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 [![PyPI - Status](https://img.shields.io/pypi/status/pyaiken.svg)](https://pypi.org/project/pyaiken/)
 
