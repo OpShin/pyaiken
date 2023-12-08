@@ -1,18 +1,12 @@
 language: rust
 rust:
  - stable
-dist: bionic
+dist: jammy
 os: linux
 arch: arm64
 jobs:
   fast_finish: true
 
-addons:
-  apt:
-    sources:
-      - deadsnakes
-    packages:
-      - python3.10
 before_install:
   - sudo apt-get update
   - sudo apt purge python2.7-minimal
