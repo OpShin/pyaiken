@@ -18,12 +18,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: Support longpaths
-      run: git config --system core.longpaths true
-      if: matrix.os == 'windows-latest'
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+    - name: Support longpaths
+      run: git config --system core.longpaths true
+      if: matrix.os == 'windows-latest'
     - name: Build pyaiken
       run: pip install .
