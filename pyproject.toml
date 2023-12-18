@@ -26,6 +26,6 @@ authors = [
 maintainers = [
   {name = "Niels Mündler", email = "n.muendler@posteo.de"}
 ]
-url = "https://github.com/opshin/uplc"
+url = "https://github.com/opshin/pyaiken"
 
 
