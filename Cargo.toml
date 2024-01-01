@@ -1,10 +1,9 @@
 [package]
 name = "pyaiken"
-version = "0.5.4"
+version = "0.5.5"
 edition = "2021"
 rust-version = "1.66.1"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 name = "pyaiken"
 crate-type = ["cdylib"]
@@ -12,5 +11,5 @@ crate-type = ["cdylib"]
 [dependencies]
 pyo3 = { version = "0.17.3", features = ["extension-module"] }
 miette = { version = "5.3.0", features = ["fancy"] }
-uplc = { git = "https://github.com/aiken-lang/aiken.git", rev = "b6acdde" }
+uplc = { git = "https://github.com/nielstron/aiken.git", rev = "ad824de" }
 hex = { version = "0.4.3" }
